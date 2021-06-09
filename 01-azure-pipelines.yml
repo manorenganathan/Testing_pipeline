@@ -20,6 +20,7 @@ stages:
     steps:
     - bash: echo I love Eng
 - stage: QADeploy
+  dependsOn: Build 
   variables:
     enviornment: QA
   jobs:
