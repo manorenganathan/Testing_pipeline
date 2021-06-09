@@ -15,14 +15,18 @@ stages:
   - job: FirstJob
     steps:
     - bash: echo I love India
+    - bash: echo $(pipelinelevelvariable)
   - job: SecondJob
     steps:
     - bash: echo I love Eng
 - stage: QADeploy
+  variables:
+    enviornment: QA
   jobs:
   - job: FirstJob
     steps:
     - bash: echo I love India
+    - bash: echo $(pipelinelevelvariable)DeployJob
   - job: SecondJob
     steps:
     - bash: echo I love Eng     
